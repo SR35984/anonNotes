@@ -1,0 +1,22 @@
+<div class="note">
+  <form (submit)="onSubmit();" #createNote="ngForm">
+    <label>Note:</label>
+    <input 
+      type="text"
+      name="content"
+      style="width: 500px"
+      required
+      minlength="3"
+      maxlength="100"
+      [(ngModel)]="note.content"
+      #content="ngModel"
+    />
+    
+    {{ content.errors | json}}
+    <button
+      type="submit"
+    >Add Note
+    </button>
+  </form>
+</div>
+<app-note-list></app-note-list>
